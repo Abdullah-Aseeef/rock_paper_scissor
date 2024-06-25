@@ -1,0 +1,25 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    align-items: stretch;
+    flex-basis: auto;
+    min-height:100vh;
+    padding: 0px;
+    margin: 0px;
+}
+section{
+    box-sizing: content-box;
+    display: flex;
+    min-height: 45vh;
+}
+#sec2{
+    min-height: 10vh;
+    background-color: lightslategray;
+}
+#sec1{
+    background-color: skyblue;
+}
+#sec3{
+    background-color: lightpink;
+}
