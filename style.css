@@ -11,6 +11,10 @@ body{
 section{
     box-sizing: content-box;
     display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: stretch;
+    text-align: center;
     min-height: 45vh;
 }
 #sec2{
@@ -22,4 +26,8 @@ section{
 }
 #sec3{
     background-color: lightpink;
+}
+.buttons{
+    display: flex;
+    justify-content: space-around;
 }
