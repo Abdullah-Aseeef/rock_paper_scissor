@@ -63,7 +63,7 @@ button{
 }
 img{
     max-height: 10vh;
-    width:fit-content;
+    width:auto;
     align-self: center;
 }
 h1{
