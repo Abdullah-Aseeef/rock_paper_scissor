@@ -7,7 +7,7 @@ body{
     min-height:100vh;
     padding: 0px;
     margin: 0px;
-    background-color: rgb(69, 1, 69,0.7);
+    background-color: rgb(34, 29, 68,1);
 }
 section{
     box-sizing: content-box;
@@ -17,9 +17,10 @@ section{
     align-items: stretch;
     text-align: center;
     min-height: 45vh;
-    color: lightgray;
-    /* max-width: 75vh; */
-    /* align-self: center; */
+    color: rgb(174, 221, 250);
+    max-width: 75vh;
+    width: 100vw;
+    align-self: center;
 }
 #sec2{
     min-height: 10vh;
@@ -40,27 +41,52 @@ section{
     justify-content: space-around;
 }
 button{
-    /* background-color: rgb(158, 98, 171); */
+    background-color: rgb(158, 98, 171);
 }
 #sec2 > button{
     align-self: center;
+    background-color: darkslateblue;
+    color: lightskyblue;
 }
 .nope{
-    background-color: blue;
+    background-color: darkslateblue;
 
 }
 #sec2.win{
-    background-color: rgba(60, 7, 83,0.7);
+    background-color: rgba(60, 7, 83,0.5);
 }
 #sec2.lose{
-    background-color: rgba(145, 10, 103,0.7);
+    background-color: rgba(145, 10, 103,0.5);
 }
 #sec2.draw{
-    background-color: rgba(3, 6, 55,0.7);
+    background-color: rgba(3, 6, 55,0.5);
 }
 img{
     max-height: 10vh;
+    width:fit-content;
+    align-self: center;
 }
 h1{
     font-size: 5vh;
+}
+
+#win-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(153, 50, 204,0.8);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 1000;
+    font-size: larger;
+}
+#win-message button{
+    background-color: aliceblue;
+}
+
+.hidden {
+    display: none;
 }
