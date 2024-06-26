@@ -2,7 +2,15 @@
 
 let buttons = document.querySelector("#sec1 > .buttons");
 buttons.addEventListener('click',(event)=>{
-    let target = event.target;
+
+    let target = event.target.tagName == 'BUTTON'? event.target:event.target.parentElement;
+    if(target.tagName != 'BUTTON'){
+        return;
+    }
+    buttons.childNodes.forEach((button)=>{
+        button.disabled = true;
+    });
+
     const button_sel = document.querySelector(`#${target.id}`);
     button_sel.classList.add("nope");
     let comp = computer_choice();
@@ -84,9 +92,27 @@ function playgame(humanChoice,computerChoice){
     return false;
 }
 function display(result,resultType){
+    let scores = document.querySelectorAll("h1");
+    scores.forEach((score)=>{
+        if(score.parentElement.id == 'sec1') score.textContent=humanScore;
+        else score.textContent=computerScore; 
+    });
     let section = document.querySelector("#sec2");
     section.textContent= result;
     section.classList.add(resultType);
+    let button = document.createElement("button");
+    button.textContent = "Play Again!";
+    section.appendChild(button);
+    button.addEventListener("click",(event)=>{
+        section.classList.remove("lose","win","draw");
+        button.remove();
+        section.textContent="";
+        let buttons = document.querySelectorAll("button");
+        buttons.forEach((button)=>{
+            button.classList.remove("nope");
+            button.disabled = false;
+        })
+    });
 }
 
 /*
