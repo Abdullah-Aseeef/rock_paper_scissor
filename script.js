@@ -1,4 +1,96 @@
 
+
+let buttons = document.querySelector("#sec1 > .buttons");
+buttons.addEventListener('click',(event)=>{
+    let target = event.target;
+    const button_sel = document.querySelector(`#${target.id}`);
+    button_sel.classList.add("nope");
+    let comp = computer_choice();
+    let human = target.id;
+    playgame(human,comp);
+});
+function computer_choice(){
+    let choice = Math.random()*3;
+    let comp_choice = '';
+    if(choice < 1){
+        comp_choice="rock";
+    }
+    else if(choice < 2){
+        comp_choice="paper";
+    }
+    else{
+        comp_choice="scissors";
+    }
+    let button = document.querySelector("#sec3 > .buttons > #"+comp_choice);
+    button.classList.add("nope");
+    return comp_choice;
+}
+let humanScore = 0;
+let computerScore = 0;
+function playgame(humanChoice,computerChoice){
+    let result = '';
+    let resultType = '';
+    function lose(){
+        computerScore++;
+        result =`You lose! ${computerChoice} beats ${humanChoice}`;
+        resultType = 'lose';
+        display(result,resultType);
+        return true;
+    }
+    function win(){
+        humanScore++;
+        result=`You win! ${humanChoice} beats ${computerChoice}`;
+        resultType = 'win';
+        display(result,resultType);
+        return true;
+        
+    }
+    if(humanChoice == 'rock')
+    {
+        if(computerChoice == 'paper')
+        {
+            return lose();
+        }
+        else if(computerChoice == 'scissors')
+        {
+            return win();
+        }
+    }
+    if(humanChoice == 'paper')
+    {
+        if(computerChoice == 'rock')
+        {
+            return win();
+        }
+        else if(computerChoice == 'scissors')
+        {
+            return lose();
+        }
+    }
+    if(humanChoice == 'scissors')
+    {
+        if(computerChoice == 'rock')
+        {
+            return lose();
+        }
+        else if(computerChoice == 'paper')
+        {
+            return win();
+        }
+    }
+    result=`Game tied! Both chose ${humanChoice}`;
+    resultType = 'draw';
+    display(result,resultType);
+    return false;
+}
+function display(result,resultType){
+    let section = document.querySelector("#sec2");
+    section.textContent= result;
+    section.classList.add(resultType);
+}
+
+/*
+
 function getComputerChoice(){
     let choice = Math.random()*3;
     
@@ -91,3 +183,5 @@ function playGame()
     console.log(`The winner of the game is ${ humanScore > computerScore ? "You!":"Computer!"}`);
 }
 // playGame();
+
+ */

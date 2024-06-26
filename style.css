@@ -20,6 +20,8 @@ section{
 #sec2{
     min-height: 10vh;
     background-color: lightslategray;
+    font-size: larger;
+    font-weight: bolder;
 }
 #sec1{
     background-color: skyblue;
@@ -30,4 +32,17 @@ section{
 .buttons{
     display: flex;
     justify-content: space-around;
+}
+.nope{
+    background-color: lightgreen;
+
+}
+#sec2.win{
+    background-color: rgba(135, 207, 235, 0.5);
+}
+#sec2.lose{
+    background-color: rgba(255, 182, 193, 0.5);
+}
+#sec2.draw{
+    background-color: rgb(119, 136, 153,0.5);
 }
